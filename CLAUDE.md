@@ -16,7 +16,7 @@ código de implementación hasta que la fase previa está aprobada. Ver `docs/`:
 
 ## Estado actual
 
-**Implementación en curso. Fases 0–2 ✅ completas. Siguiente: Fase 3 (catálogo curado: datos + carga).**
+**Implementación en curso. Fases 0–3 ✅ completas. Siguiente: Fase 4 (persistencia con Hive).**
 Consulta siempre los checkboxes de `docs/03-tasks.md` y la bitácora del `README.md`
 para el estado más reciente.
 

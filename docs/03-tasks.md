@@ -56,15 +56,16 @@ aplicado. `flutter analyze` sin issues y smoke test del arranque pasa.
 
 ---
 
-## Fase 3 — Catálogo curado (datos + carga)
+## Fase 3 — Catálogo curado (datos + carga) ✅
 
-- [ ] **3.1** Crear `assets/catalog/catalog.json` con un set inicial de los 9
-  departamentos y unas experiencias por cada uno (contenido de producto).
-- [ ] **3.2** `catalog/catalog_loader.dart` — leer y parsear el JSON desde assets.
-- [ ] **3.3** `catalog/catalog_providers.dart` — `catalogProvider`,
-  `departmentsProvider`, `experiencesByDeptProvider(id)`.
+- [x] **3.1** `assets/catalog/catalog.json` con los 9 departamentos y 38 experiencias
+  iniciales (contenido de producto, editable). Cada experiencia tiene `category`.
+- [x] **3.2** `catalog/catalog_loader.dart` — lee y parsea el JSON desde assets.
+- [x] **3.3** `catalog/catalog_providers.dart` — `catalogLoaderProvider`,
+  `catalogProvider`, `departmentsProvider`, `experiencesByDeptProvider(id)`.
 
-**Verificable:** un provider expone los departamentos leídos del JSON.
+**Verificable:** ✅ `departmentsProvider` expone los departamentos del JSON;
+tests de integridad del catálogo real + wiring de providers en verde.
 
 ---
 

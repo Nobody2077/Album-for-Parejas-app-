@@ -1,4 +1,319 @@
 {
-  "departments": [],
-  "experiences": []
+  "departments": [
+    {
+      "id": "la_paz",
+      "name": "La Paz",
+      "description": "Montañas, teleféricos y la ciudad más alta del mundo.",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "cochabamba",
+      "name": "Cochabamba",
+      "description": "El corazón gastronómico de Bolivia.",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "santa_cruz",
+      "name": "Santa Cruz",
+      "description": "Calor, palmeras y noches que no terminan.",
+      "emoji": "🌴"
+    },
+    {
+      "id": "oruro",
+      "name": "Oruro",
+      "description": "Tierra del Carnaval y la devoción.",
+      "emoji": "🎭"
+    },
+    {
+      "id": "potosi",
+      "name": "Potosí",
+      "description": "El Cerro Rico, el Salar y los cielos infinitos.",
+      "emoji": "⛏️"
+    },
+    {
+      "id": "chuquisaca",
+      "name": "Chuquisaca",
+      "description": "Sucre, la ciudad blanca y cuna de Bolivia.",
+      "emoji": "🏛️"
+    },
+    {
+      "id": "tarija",
+      "name": "Tarija",
+      "description": "Viñedos, singani y valles templados.",
+      "emoji": "🍇"
+    },
+    {
+      "id": "beni",
+      "name": "Beni",
+      "description": "Pampas, ríos y la Amazonía boliviana.",
+      "emoji": "🐊"
+    },
+    {
+      "id": "pando",
+      "name": "Pando",
+      "description": "Selva profunda y la cosecha de la castaña.",
+      "emoji": "🌳"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "lp_telef",
+      "departmentId": "la_paz",
+      "title": "Subir al Teleférico al atardecer",
+      "description": "Tomen la línea roja y vean cómo se enciende la ciudad desde el cielo.",
+      "category": "paisaje"
+    },
+    {
+      "id": "lp_luna",
+      "departmentId": "la_paz",
+      "title": "Caminar por el Valle de la Luna",
+      "description": "Un paisaje de otro mundo a pocos minutos de la ciudad.",
+      "category": "aventura"
+    },
+    {
+      "id": "lp_illimani",
+      "departmentId": "la_paz",
+      "title": "Ver el Illimani al amanecer",
+      "description": "Despierten temprano y contemplen juntos al guardián de La Paz.",
+      "category": "paisaje"
+    },
+    {
+      "id": "lp_brujas",
+      "departmentId": "la_paz",
+      "title": "Pasear por el Mercado de las Brujas",
+      "description": "Descubran amuletos, hierbas y tradiciones andinas.",
+      "category": "cultura"
+    },
+    {
+      "id": "lp_chairo",
+      "departmentId": "la_paz",
+      "title": "Compartir un chairo paceño",
+      "description": "Una sopa que calienta el cuerpo y el alma.",
+      "category": "comida"
+    },
+    {
+      "id": "cb_cristo",
+      "departmentId": "cochabamba",
+      "title": "Subir al Cristo de la Concordia",
+      "description": "La mejor vista de la ciudad desde los brazos abiertos del Cristo.",
+      "category": "paisaje"
+    },
+    {
+      "id": "cb_silp",
+      "departmentId": "cochabamba",
+      "title": "Comer un silpancho juntos",
+      "description": "El plato emblema cochabambino, mejor si se comparte.",
+      "category": "comida"
+    },
+    {
+      "id": "cb_tunari",
+      "departmentId": "cochabamba",
+      "title": "Excursión al Parque Tunari",
+      "description": "Lagunas, bosques y aire fresco para una escapada en pareja.",
+      "category": "aventura"
+    },
+    {
+      "id": "cb_cancha",
+      "departmentId": "cochabamba",
+      "title": "Perderse en la feria de La Cancha",
+      "description": "El mercado más grande de Bolivia: colores, sabores y regateo.",
+      "category": "cultura"
+    },
+    {
+      "id": "cb_tarata",
+      "departmentId": "cochabamba",
+      "title": "Escapada romántica a Tarata",
+      "description": "Un pueblo colonial tranquilo para caminar sin apuro.",
+      "category": "romantico"
+    },
+    {
+      "id": "sc_pirai",
+      "departmentId": "santa_cruz",
+      "title": "Ver el atardecer en el Río Piraí",
+      "description": "Los cielos cruceños se pintan de naranja al caer la tarde.",
+      "category": "paisaje"
+    },
+    {
+      "id": "sc_cunape",
+      "departmentId": "santa_cruz",
+      "title": "Probar cuñapé recién horneado",
+      "description": "El antojo perfecto para acompañar con un café.",
+      "category": "comida"
+    },
+    {
+      "id": "sc_lomas",
+      "departmentId": "santa_cruz",
+      "title": "Aventura en las Lomas de Arena",
+      "description": "Dunas sorprendentes a las afueras de la ciudad.",
+      "category": "aventura"
+    },
+    {
+      "id": "sc_samaipata",
+      "departmentId": "santa_cruz",
+      "title": "Visitar El Fuerte de Samaipata",
+      "description": "Un sitio arqueológico rodeado de naturaleza, Patrimonio de la Humanidad.",
+      "category": "cultura"
+    },
+    {
+      "id": "sc_plaza",
+      "departmentId": "santa_cruz",
+      "title": "Noche en la plaza 24 de Septiembre",
+      "description": "Caminar de la mano por el corazón de la ciudad.",
+      "category": "romantico"
+    },
+    {
+      "id": "or_carnaval",
+      "departmentId": "oruro",
+      "title": "Vivir el Carnaval de Oruro",
+      "description": "La Diablada y la fe en la mayor fiesta folklórica de Bolivia.",
+      "category": "cultura"
+    },
+    {
+      "id": "or_socavon",
+      "departmentId": "oruro",
+      "title": "Visitar el Santuario del Socavón",
+      "description": "Un momento de calma frente a la Virgen del Socavón.",
+      "category": "cultura"
+    },
+    {
+      "id": "or_rostro",
+      "departmentId": "oruro",
+      "title": "Buscar el Rostro de Dios en Salinas",
+      "description": "Una formación natural que sorprende a quien la encuentra.",
+      "category": "paisaje"
+    },
+    {
+      "id": "or_charque",
+      "departmentId": "oruro",
+      "title": "Compartir un charque orureño",
+      "description": "Sabor del altiplano para reponer energías.",
+      "category": "comida"
+    },
+    {
+      "id": "pt_uyuni",
+      "departmentId": "potosi",
+      "title": "Ver el atardecer en el Salar de Uyuni",
+      "description": "El espejo más grande del mundo, infinito y romántico.",
+      "category": "paisaje"
+    },
+    {
+      "id": "pt_cerro",
+      "departmentId": "potosi",
+      "title": "Conocer el Cerro Rico",
+      "description": "La montaña que cambió la historia del mundo.",
+      "category": "cultura"
+    },
+    {
+      "id": "pt_moneda",
+      "departmentId": "potosi",
+      "title": "Visitar la Casa Nacional de la Moneda",
+      "description": "Plata, historia y arte colonial bajo un mismo techo.",
+      "category": "cultura"
+    },
+    {
+      "id": "pt_tunupa",
+      "departmentId": "potosi",
+      "title": "Subir al volcán Tunupa",
+      "description": "Vistas del salar desde lo alto, una aventura para dos.",
+      "category": "aventura"
+    },
+    {
+      "id": "ch_recoleta",
+      "departmentId": "chuquisaca",
+      "title": "Mirador de La Recoleta en Sucre",
+      "description": "La ciudad blanca a sus pies, ideal al atardecer.",
+      "category": "paisaje"
+    },
+    {
+      "id": "ch_glorieta",
+      "departmentId": "chuquisaca",
+      "title": "Pasear por el Castillo de la Glorieta",
+      "description": "El único castillo de Bolivia, con una historia de amor detrás.",
+      "category": "romantico"
+    },
+    {
+      "id": "ch_dinos",
+      "departmentId": "chuquisaca",
+      "title": "Ver las huellas de dinosaurios en Cal Orck'o",
+      "description": "Más de cinco mil pisadas en el Parque Cretácico.",
+      "category": "aventura"
+    },
+    {
+      "id": "ch_chocolate",
+      "departmentId": "chuquisaca",
+      "title": "Compartir chocolate sucrense",
+      "description": "Sucre es famosa por su chocolate artesanal.",
+      "category": "comida"
+    },
+    {
+      "id": "tj_vinos",
+      "departmentId": "tarija",
+      "title": "Recorrer la Ruta del Vino y el Singani",
+      "description": "Catas en los viñedos más altos del mundo.",
+      "category": "comida"
+    },
+    {
+      "id": "tj_sanjacinto",
+      "departmentId": "tarija",
+      "title": "Paseo por el embalse San Jacinto",
+      "description": "Un paseo en bote y pejerrey fresco junto al agua.",
+      "category": "paisaje"
+    },
+    {
+      "id": "tj_concepcion",
+      "departmentId": "tarija",
+      "title": "Atardecer en el Valle de la Concepción",
+      "description": "Viñedos y cielos templados para brindar en pareja.",
+      "category": "romantico"
+    },
+    {
+      "id": "tj_saice",
+      "departmentId": "tarija",
+      "title": "Probar un saice tarijeño",
+      "description": "El plato típico chapaco, lleno de sabor.",
+      "category": "comida"
+    },
+    {
+      "id": "bn_pampas",
+      "departmentId": "beni",
+      "title": "Tour por las pampas del Beni",
+      "description": "Caimanes, capibaras y aves en plena Amazonía.",
+      "category": "aventura"
+    },
+    {
+      "id": "bn_mamore",
+      "departmentId": "beni",
+      "title": "Navegar el río Mamoré",
+      "description": "Un atardecer sobre el agua que no se olvida.",
+      "category": "paisaje"
+    },
+    {
+      "id": "bn_masaco",
+      "departmentId": "beni",
+      "title": "Compartir un masaco",
+      "description": "Plátano y charque, sabor del oriente boliviano.",
+      "category": "comida"
+    },
+    {
+      "id": "pd_tahuamanu",
+      "departmentId": "pando",
+      "title": "Navegar el río Tahuamanu",
+      "description": "Selva, silencio y naturaleza intacta.",
+      "category": "paisaje"
+    },
+    {
+      "id": "pd_selva",
+      "departmentId": "pando",
+      "title": "Caminata por la selva amazónica",
+      "description": "Adéntrense juntos en uno de los bosques más vírgenes de Bolivia.",
+      "category": "aventura"
+    },
+    {
+      "id": "pd_castana",
+      "departmentId": "pando",
+      "title": "Conocer la cosecha de la castaña",
+      "description": "El tesoro amazónico que da vida a Pando.",
+      "category": "cultura"
+    }
+  ]
 }
