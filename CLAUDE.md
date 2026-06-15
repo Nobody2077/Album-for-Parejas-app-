@@ -16,7 +16,7 @@ código de implementación hasta que la fase previa está aprobada. Ver `docs/`:
 
 ## Estado actual
 
-**Implementación en curso. Fases 0–1 ✅ completas. Siguiente: Fase 2 (modelos del catálogo).**
+**Implementación en curso. Fases 0–2 ✅ completas. Siguiente: Fase 3 (catálogo curado: datos + carga).**
 Consulta siempre los checkboxes de `docs/03-tasks.md` y la bitácora del `README.md`
 para el estado más reciente.
 

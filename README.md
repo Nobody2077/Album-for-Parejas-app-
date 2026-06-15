@@ -19,7 +19,7 @@ notas, fecha y una valoración en corazones.
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
 | Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
 | Tasks | ✅ Aprobado | [docs/03-tasks.md](docs/03-tasks.md) |
-| Implementación | 🟡 Fases 0–1 ✅ · Fase 2 siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
+| Implementación | 🟡 Fases 0–2 ✅ · Fase 3 siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
 
 ---
 
@@ -51,6 +51,9 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
 - **2026-06-15** — **Fase 1 (tema y arranque) completa**: paleta cálida, tipografías
   (Playfair Display + Nunito Sans), `ThemeData` M3, `MaterialApp.router` con pantalla
   de bienvenida. `flutter analyze` sin issues y smoke test del arranque en verde.
+- **2026-06-15** — **Fase 2 (modelos del catálogo) completa**: `Department`, `Experience`
+  y `Catalog` inmutables con `fromJson` estricto, igualdad por `id` y helpers. 11 tests
+  unitarios en verde.
 
 ---
 

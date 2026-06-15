@@ -42,13 +42,17 @@ aplicado. `flutter analyze` sin issues y smoke test del arranque pasa.
 
 ---
 
-## Fase 2 — Modelos del catálogo
+## Fase 2 — Modelos del catálogo ✅
 
-- [ ] **2.1** `catalog/models/department.dart` — modelo inmutable + `fromJson`.
-- [ ] **2.2** `catalog/models/experience.dart` — modelo inmutable + `fromJson`.
-- [ ] **2.3** Modelo contenedor `Catalog` (lista de departamentos y de experiencias).
+- [x] **2.1** `catalog/models/department.dart` — modelo inmutable + `fromJson`
+  (igualdad por `id`, parseo estricto).
+- [x] **2.2** `catalog/models/experience.dart` — modelo inmutable + `fromJson`
+  (igualdad por `id`, parseo estricto).
+- [x] **2.3** Modelo contenedor `Catalog` (listas + helpers `experiencesFor(deptId)`
+  y `departmentById(id)`). Helper de parseo en `catalog/models/json_utils.dart`.
 
-**Verificable:** tests unitarios de parseo `fromJson` pasan.
+**Verificable:** ✅ 11 tests de parseo `fromJson`, igualdad y helpers pasan
+(`test/catalog/catalog_models_test.dart`).
 
 ---
 
