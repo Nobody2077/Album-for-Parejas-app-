@@ -19,7 +19,7 @@ notas, fecha y una valoración en corazones.
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
 | Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
 | Tasks | ✅ Aprobado | [docs/03-tasks.md](docs/03-tasks.md) |
-| Implementación | 🟡 Fase 0 ✅ · Fase 1 siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
+| Implementación | 🟡 Fases 0–1 ✅ · Fase 2 siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
 
 ---
 
@@ -48,6 +48,9 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
   `docs/03-tasks.md`.
 - **2026-06-15** — Tasks aprobadas. **Fase 0 (setup) completa**: dependencias agregadas,
   assets y permisos configurados, `flutter analyze` sin issues.
+- **2026-06-15** — **Fase 1 (tema y arranque) completa**: paleta cálida, tipografías
+  (Playfair Display + Nunito Sans), `ThemeData` M3, `MaterialApp.router` con pantalla
+  de bienvenida. `flutter analyze` sin issues y smoke test del arranque en verde.
 
 ---
 

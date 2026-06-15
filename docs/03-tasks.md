@@ -27,16 +27,18 @@
 
 ---
 
-## Fase 1 — Tema y arranque
+## Fase 1 — Tema y arranque ✅
 
-- [ ] **1.1** `app/theme/app_colors.dart` — paleta (crema, terracota, rosa polvo, dorado).
-- [ ] **1.2** `app/theme/app_typography.dart` — tipografías con `google_fonts`
+- [x] **1.1** `app/theme/app_colors.dart` — paleta (crema, terracota, rosa polvo, dorado).
+- [x] **1.2** `app/theme/app_typography.dart` — tipografías con `google_fonts`
   (serif para títulos, sans para cuerpo).
-- [ ] **1.3** `app/theme/app_theme.dart` — `ThemeData` warm/elegant.
-- [ ] **1.4** `app/app.dart` — `MaterialApp.router` aplicando el tema.
-- [ ] **1.5** `main.dart` — bootstrap mínimo con `ProviderScope` (Hive se conecta en Fase 4).
+- [x] **1.3** `app/theme/app_theme.dart` — `ThemeData` warm/elegant.
+- [x] **1.4** `app/app.dart` — `MaterialApp.router` aplicando el tema
+  (con router placeholder de una ruta `/`; el router real llega en Fase 6).
+- [x] **1.5** `main.dart` — bootstrap mínimo con `ProviderScope` (Hive se conecta en Fase 4).
 
-**Verificable:** la app arranca mostrando una pantalla con el tema aplicado.
+**Verificable:** ✅ la app arranca mostrando una pantalla de bienvenida con el tema
+aplicado. `flutter analyze` sin issues y smoke test del arranque pasa.
 
 ---
 
