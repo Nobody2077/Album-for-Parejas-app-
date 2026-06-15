@@ -4,8 +4,8 @@
 > [00-context.md](00-context.md) y las decisiones en
 > [01-decisions.md](01-decisions.md). Fecha: 2026-06-15.
 >
-> **Estado: PROPUESTA — pendiente de aprobación.** No se genera código de
-> implementación hasta aprobar Design → Tasks (regla de Spec Driven Development).
+> **Estado: APROBADO (2026-06-15).** Hive confirmado: `hive_ce`. Continúa en
+> [03-tasks.md](03-tasks.md).
 
 ---
 

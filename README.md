@@ -11,14 +11,14 @@ notas, fecha y una valoración en corazones.
 
 ## 📍 Estado del proyecto
 
-**Fase actual: Spec Driven Development → Design (propuesta, pendiente de aprobación).**
+**Fase actual: Spec Driven Development → Tasks (propuesta, pendiente de aprobación).**
 
 | Fase | Estado | Documento |
 |------|--------|-----------|
 | Contexto / Visión | ✅ Listo | [docs/00-context.md](docs/00-context.md) |
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
-| Design | 🟡 En revisión | [docs/02-design.md](docs/02-design.md) |
-| Tasks | ⬜ Pendiente | — |
+| Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
+| Tasks | 🟡 En revisión | [docs/03-tasks.md](docs/03-tasks.md) |
 | Implementación | ⬜ Pendiente | — |
 
 ---
@@ -44,6 +44,8 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
 
 - **2026-06-15** — Inicializado git. Definidas decisiones de producto y documento de
   Design. Documentación del proyecto creada en `docs/`.
+- **2026-06-15** — Design aprobado (Hive = `hive_ce`). Desglose de tareas creado en
+  `docs/03-tasks.md`.
 
 ---
 
