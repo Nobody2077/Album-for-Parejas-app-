@@ -10,18 +10,20 @@
 
 ---
 
-## Fase 0 — Setup del proyecto
+## Fase 0 — Setup del proyecto ✅
 
-- [ ] **0.1** Agregar dependencias al `pubspec.yaml`:
+- [x] **0.1** Agregar dependencias al `pubspec.yaml`:
   `flutter_riverpod`, `go_router`, `hive_ce`, `hive_ce_flutter`, `path_provider`,
   `image_picker`, `uuid`, `intl`, `google_fonts`.
-- [ ] **0.2** Agregar dev-dependencies: `hive_ce_generator`, `build_runner`.
-- [ ] **0.3** Declarar `assets/catalog/` en la sección `flutter:` del `pubspec.yaml`.
-- [ ] **0.4** Permisos de plataforma para `image_picker` (cámara/galería en
-  `Info.plist` de iOS y `AndroidManifest.xml`).
-- [ ] **0.5** `flutter pub get` y verificar que compila el proyecto base.
+- [x] **0.2** Agregar dev-dependencies: `hive_ce_generator`, `build_runner`.
+- [x] **0.3** Declarar `assets/catalog/` en la sección `flutter:` del `pubspec.yaml`
+  (con `catalog.json` placeholder hasta la Fase 3).
+- [x] **0.4** Permisos de plataforma para `image_picker`: descripciones de cámara y
+  galería en `Info.plist` de iOS. Android moderno usa el *photo picker* y no
+  requiere permisos en el manifest.
+- [x] **0.5** `flutter pub get` y `flutter analyze` → *No issues found!*
 
-**Verificable:** el proyecto compila con las nuevas dependencias.
+**Verificable:** ✅ el proyecto compila con las nuevas dependencias.
 
 ---
 

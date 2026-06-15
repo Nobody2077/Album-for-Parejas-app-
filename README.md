@@ -18,8 +18,8 @@ notas, fecha y una valoración en corazones.
 | Contexto / Visión | ✅ Listo | [docs/00-context.md](docs/00-context.md) |
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
 | Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
-| Tasks | 🟡 En revisión | [docs/03-tasks.md](docs/03-tasks.md) |
-| Implementación | ⬜ Pendiente | — |
+| Tasks | ✅ Aprobado | [docs/03-tasks.md](docs/03-tasks.md) |
+| Implementación | 🟡 Fase 0 ✅ · Fase 1 siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
 
 ---
 
@@ -46,6 +46,8 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
   Design. Documentación del proyecto creada en `docs/`.
 - **2026-06-15** — Design aprobado (Hive = `hive_ce`). Desglose de tareas creado en
   `docs/03-tasks.md`.
+- **2026-06-15** — Tasks aprobadas. **Fase 0 (setup) completa**: dependencias agregadas,
+  assets y permisos configurados, `flutter analyze` sin issues.
 
 ---
 

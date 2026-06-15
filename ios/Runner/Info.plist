@@ -4,6 +4,10 @@
 <dict>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Our Journey necesita la cámara para tomar fotos de sus recuerdos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Our Journey necesita acceder a sus fotos para agregarlas a sus recuerdos.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
