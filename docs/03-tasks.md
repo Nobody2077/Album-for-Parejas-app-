@@ -69,20 +69,22 @@ tests de integridad del catálogo real + wiring de providers en verde.
 
 ---
 
-## Fase 4 — Persistencia (Hive)
+## Fase 4 — Persistencia (Hive) ✅
 
-- [ ] **4.1** `experience/models/experience_progress.dart` — modelo Hive
-  (`@HiveType`) con los campos del Design.
-- [ ] **4.2** Generar el adapter con `build_runner`.
-- [ ] **4.3** `core/storage/hive_init.dart` — inicializar Hive, registrar adapter,
-  abrir el box de progreso.
-- [ ] **4.4** Conectar `hive_init` en `main.dart` antes de `runApp`.
-- [ ] **4.5** `experience/data/progress_repository.dart` — CRUD sobre Hive
-  (obtener, crear/actualizar, borrar progreso por `experienceId`).
-- [ ] **4.6** `experience/experience_providers.dart` — `progressRepositoryProvider`,
-  `progressProvider(expId)`, `overallProgressProvider`, `departmentProgressProvider(id)`.
+- [x] **4.1** `experience/models/experience_progress.dart` — modelo Hive
+  (`@HiveType(typeId: 0)`) con los campos del Design + `copyWith` y factory `create`.
+- [x] **4.2** Adapter generado con `build_runner` (`experience_progress.g.dart`
+  + `hive_registrar.g.dart`).
+- [x] **4.3** `core/storage/hive_init.dart` — `initHive()` (init + registrar + abrir box).
+- [x] **4.4** `main.dart` llama `initHive()` antes de `runApp`.
+- [x] **4.5** `experience/data/progress_repository.dart` — CRUD (upsert con timestamps
+  automáticos, delete del registro completo).
+- [x] **4.6** `experience/experience_providers.dart` — `progressRepositoryProvider`,
+  `progressControllerProvider` (Notifier reactivo), `progressProvider(expId)`,
+  `overallProgressProvider`, `departmentProgressProvider(id)` + `ProgressStats`.
 
-**Verificable:** crear/leer/borrar un `ExperienceProgress` persiste tras reiniciar.
+**Verificable:** ✅ crear/leer/borrar un `ExperienceProgress` persiste tras reabrir
+el box (test de "reinicio"); providers derivados reaccionan a los cambios. 25 tests.
 
 ---
 
