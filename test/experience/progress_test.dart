@@ -4,7 +4,7 @@ import 'package:album_app/catalog/catalog_providers.dart';
 import 'package:album_app/catalog/models/catalog.dart';
 import 'package:album_app/catalog/models/department.dart';
 import 'package:album_app/catalog/models/experience.dart';
-import 'package:album_app/experience/data/progress_repository.dart';
+import 'package:album_app/experience/data/hive_progress_repository.dart';
 import 'package:album_app/experience/experience_providers.dart';
 import 'package:album_app/experience/models/experience_progress.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -37,7 +37,7 @@ void main() {
   group('ProgressRepository', () {
     test('guardar y leer persiste tras reabrir el box (reinicio)', () async {
       var box = await openBox();
-      await ProgressRepository(box).save(
+      await HiveProgressRepository(box).save(
         ExperienceProgress.create(
           experienceId: 'lp_telef',
           completed: true,
@@ -52,7 +52,7 @@ void main() {
       await box.close();
       box = await openBox();
 
-      final loaded = ProgressRepository(box).getById('lp_telef');
+      final loaded = HiveProgressRepository(box).getById('lp_telef');
       expect(loaded, isNotNull);
       expect(loaded!.completed, isTrue);
       expect(loaded.rating, 5);
@@ -62,7 +62,7 @@ void main() {
     });
 
     test('save conserva createdAt y refresca updatedAt', () async {
-      final repo = ProgressRepository(await openBox());
+      final repo = HiveProgressRepository(await openBox());
 
       final first = await repo.save(
         ExperienceProgress.create(experienceId: 'x', now: DateTime(2020, 1, 1)),
@@ -76,7 +76,7 @@ void main() {
     });
 
     test('delete elimina el registro', () async {
-      final repo = ProgressRepository(await openBox());
+      final repo = HiveProgressRepository(await openBox());
       await repo.save(ExperienceProgress.create(experienceId: 'x'));
 
       await repo.delete('x');
@@ -85,7 +85,7 @@ void main() {
     });
 
     test('getAllById indexa por experienceId', () async {
-      final repo = ProgressRepository(await openBox());
+      final repo = HiveProgressRepository(await openBox());
       await repo.save(ExperienceProgress.create(experienceId: 'a'));
       await repo.save(ExperienceProgress.create(experienceId: 'b'));
 
@@ -111,7 +111,7 @@ void main() {
       final container = ProviderContainer(
         overrides: [
           catalogProvider.overrideWith((ref) async => testCatalog),
-          progressRepositoryProvider.overrideWithValue(ProgressRepository(box)),
+          progressRepositoryProvider.overrideWithValue(HiveProgressRepository(box)),
         ],
       );
       addTearDown(container.dispose);

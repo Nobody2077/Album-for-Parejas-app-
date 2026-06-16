@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../home/presentation/home_screen.dart';
+
 /// Configuración de navegación de la app.
 ///
 /// Las pantallas reales llegan en la Fase 7; por ahora cada ruta muestra un
@@ -12,11 +14,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/',
       name: 'home',
-      builder: (context, state) => const _PlaceholderScreen(
-        title: 'Home',
-        actionLabel: 'Ver departamentos',
-        destination: '/departments',
-      ),
+      builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
       path: '/departments',

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../catalog/catalog_providers.dart';
 import '../core/storage/hive_init.dart';
+import 'data/hive_progress_repository.dart';
 import 'data/progress_repository.dart';
 import 'models/experience_progress.dart';
 
@@ -36,7 +37,7 @@ class ProgressStats {
 /// Repositorio de progreso sobre el box de Hive ya abierto en `initHive()`.
 /// En tests se sustituye con un repo respaldado por un box temporal.
 final progressRepositoryProvider = Provider<ProgressRepository>(
-  (ref) => ProgressRepository(progressBox()),
+  (ref) => HiveProgressRepository(progressBox()),
 );
 
 /// Fuente de verdad reactiva del progreso, indexado por `experienceId`.
@@ -78,6 +79,18 @@ final overallProgressProvider = Provider<ProgressStats>((ref) {
       .length;
   final total = ref.watch(catalogProvider).value?.experiences.length ?? 0;
   return ProgressStats(completed: completed, total: total);
+});
+
+/// Recuerdos recientes con foto, del más nuevo al más antiguo (máx. 8).
+/// Alimenta la tira de "últimos recuerdos" de la Home.
+final recentMemoriesProvider = Provider<List<ExperienceProgress>>((ref) {
+  final withPhotos = ref
+      .watch(progressControllerProvider)
+      .values
+      .where((p) => p.photoFileNames.isNotEmpty)
+      .toList()
+    ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
+  return withPhotos.take(8).toList(growable: false);
 });
 
 /// Progreso de un departamento: completadas sobre total de ese departamento.

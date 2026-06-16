@@ -1,35 +1,21 @@
-import 'package:hive_ce/hive.dart';
-
 import '../models/experience_progress.dart';
 
-/// Única pieza que conoce Hive. La UI habla con providers, no con este repo
-/// directamente. Mañana un `FirebaseProgressRepository` podría reemplazarlo
-/// sin tocar las pantallas.
-class ProgressRepository {
-  ProgressRepository(this._box);
-
-  final Box<ExperienceProgress> _box;
-
+/// Contrato de persistencia del progreso del usuario.
+///
+/// La UI habla con providers, no con este repo directamente. Esta interfaz es
+/// lo que permite cambiar la fuente de datos (Hive hoy, Firebase mañana, o un
+/// fake en memoria en tests) sin tocar las pantallas.
+abstract interface class ProgressRepository {
   /// Todo el progreso indexado por `experienceId`.
-  Map<String, ExperienceProgress> getAllById() => {
-        for (final progress in _box.values) progress.experienceId: progress,
-      };
+  Map<String, ExperienceProgress> getAllById();
 
   /// Progreso de una experiencia, o `null` si el usuario no la ha tocado.
-  ExperienceProgress? getById(String experienceId) => _box.get(experienceId);
+  ExperienceProgress? getById(String experienceId);
 
-  /// Crea o actualiza (upsert) el progreso. El repositorio es la autoridad de
-  /// los timestamps: conserva `createdAt` y refresca `updatedAt`.
-  Future<ExperienceProgress> save(ExperienceProgress progress) async {
-    final existing = _box.get(progress.experienceId);
-    final toSave = progress.copyWith(
-      createdAt: existing?.createdAt ?? progress.createdAt,
-      updatedAt: DateTime.now(),
-    );
-    await _box.put(toSave.experienceId, toSave);
-    return toSave;
-  }
+  /// Crea o actualiza (upsert) el progreso. La implementación es la autoridad
+  /// de los timestamps: conserva `createdAt` y refresca `updatedAt`.
+  Future<ExperienceProgress> save(ExperienceProgress progress);
 
   /// Elimina el progreso de una experiencia (registro completo).
-  Future<void> delete(String experienceId) => _box.delete(experienceId);
+  Future<void> delete(String experienceId);
 }

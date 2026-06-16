@@ -52,4 +52,12 @@ class Catalog {
     }
     return null;
   }
+
+  /// Experiencia con ese [id], o `null` si no existe en el catálogo.
+  Experience? experienceById(String id) {
+    for (final experience in experiences) {
+      if (experience.id == id) return experience;
+    }
+    return null;
+  }
 }
