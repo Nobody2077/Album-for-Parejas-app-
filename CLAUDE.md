@@ -16,7 +16,7 @@ código de implementación hasta que la fase previa está aprobada. Ver `docs/`:
 
 ## Estado actual
 
-**Implementación en curso. Fases 0–4 ✅ completas. Siguiente: Fase 5 (almacenamiento de fotos).**
+**Implementación en curso. Fases 0–5 ✅ completas. Siguiente: Fase 6 (navegación con GoRouter).**
 Consulta siempre los checkboxes de `docs/03-tasks.md` y la bitácora del `README.md`
 para el estado más reciente.
 

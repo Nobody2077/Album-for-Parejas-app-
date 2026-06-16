@@ -88,15 +88,17 @@ el box (test de "reinicio"); providers derivados reaccionan a los cambios. 25 te
 
 ---
 
-## Fase 5 — Almacenamiento de fotos
+## Fase 5 — Almacenamiento de fotos ✅
 
-- [ ] **5.1** `core/services/image_storage_service.dart` — copiar foto elegida a
-  `{appDocs}/photos/{experienceId}/{uuid}.jpg`, devolver nombre de archivo;
-  resolver ruta de lectura; borrar archivo(s).
-- [ ] **5.2** Integrar `image_picker` (cámara y galería) detrás del servicio.
+- [x] **5.1** `core/services/image_storage_service.dart` — `savePhoto` copia a
+  `{appDocs}/photos/{experienceId}/{uuid}.ext` y devuelve el nombre; `resolveFile`
+  reconstruye la ruta; `deletePhoto`/`deleteExperiencePhotos` borran. Directorio
+  base inyectable (`appDocsDirProvider`, sobreescrito en `main`).
+- [x] **5.2** `core/services/image_picker_service.dart` — wrapper de `image_picker`
+  (cámara y galería, `maxWidth: 1920`, `imageQuality: 85`).
 
-**Verificable:** se selecciona una foto, se copia al directorio de la app y se
-puede volver a mostrar desde su nombre de archivo.
+**Verificable:** ✅ tests de `ImageStorageService` (copiar, resolver, nombre único,
+borrar foto/carpeta) en verde. El flujo con `image_picker` se prueba en la app (Fase 7).
 
 ---
 

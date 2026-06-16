@@ -19,7 +19,7 @@ notas, fecha y una valoración en corazones.
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
 | Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
 | Tasks | ✅ Aprobado | [docs/03-tasks.md](docs/03-tasks.md) |
-| Implementación | 🟡 Fases 0–4 ✅ · Fase 5 siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
+| Implementación | 🟡 Fases 0–5 ✅ · Fase 6 siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
 
 ---
 
@@ -61,6 +61,9 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
   (`@HiveType`), adapter generado, `initHive()`, `ProgressRepository` y providers
   reactivos (`progressControllerProvider`, `overallProgressProvider`, etc.). El progreso
   persiste tras reiniciar. 25 tests en verde.
+- **2026-06-15** — **Fase 5 (almacenamiento de fotos) completa**: `ImageStorageService`
+  (copiar/resolver/borrar, solo nombres de archivo) e `ImagePickerService` (cámara/galería).
+  30 tests en verde.
 
 ---
 
