@@ -1,21 +1,31 @@
-// Smoke test del arranque de la app con el tema aplicado (Fase 1).
+// Test de navegación entre las rutas placeholder (Fase 6).
 
-import 'package:flutter/material.dart';
+import 'package:album_app/app/app.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:album_app/app/app.dart';
-
 void main() {
-  testWidgets('La app arranca mostrando la pantalla de bienvenida',
+  testWidgets('navega Home -> Departamentos -> Detalle depto -> Experiencia',
       (WidgetTester tester) async {
-    await tester.pumpWidget(
-      const ProviderScope(child: OurJourneyApp()),
-    );
+    await tester.pumpWidget(const ProviderScope(child: OurJourneyApp()));
     await tester.pumpAndSettle();
 
-    // El título de la app aparece y se renderizan los 5 corazones.
-    expect(find.text('Our Journey'), findsOneWidget);
-    expect(find.byIcon(Icons.favorite), findsNWidgets(5));
+    // Home
+    expect(find.text('Ver departamentos'), findsOneWidget);
+
+    // -> Departamentos
+    await tester.tap(find.text('Ver departamentos'));
+    await tester.pumpAndSettle();
+    expect(find.text('Abrir La Paz'), findsOneWidget);
+
+    // -> Detalle de departamento (con el path param)
+    await tester.tap(find.text('Abrir La Paz'));
+    await tester.pumpAndSettle();
+    expect(find.text('Departamento: la_paz'), findsWidgets);
+
+    // -> Detalle de experiencia (con el path param)
+    await tester.tap(find.text('Abrir una experiencia'));
+    await tester.pumpAndSettle();
+    expect(find.text('Experiencia: lp_telef'), findsWidgets);
   });
 }

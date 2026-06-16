@@ -102,13 +102,15 @@ borrar foto/carpeta) en verde. El flujo con `image_picker` se prueba en la app (
 
 ---
 
-## Fase 6 — Navegación
+## Fase 6 — Navegación ✅
 
-- [ ] **6.1** `app/router.dart` — `GoRouter` con las rutas:
-  `/`, `/departments`, `/departments/:deptId`, `/experiences/:expId`.
-- [ ] **6.2** Conectar el router en `app.dart`.
+- [x] **6.1** `app/router.dart` — `GoRouter` (instancia simple `appRouter`) con las
+  rutas `/`, `/departments`, `/departments/:deptId`, `/experiences/:expId` y
+  placeholders navegables (se reemplazan por las pantallas reales en Fase 7).
+- [x] **6.2** `app.dart` usa `appRouter` (se quitó el router placeholder de Fase 1).
 
-**Verificable:** se puede navegar entre pantallas placeholder de cada ruta.
+**Verificable:** ✅ test de navegación recorre las 4 rutas (incl. path params)
+de punta a punta.
 
 ---
 
