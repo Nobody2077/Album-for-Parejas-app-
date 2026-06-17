@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../departments/presentation/department_detail_screen.dart';
+import '../departments/presentation/departments_screen.dart';
 import '../home/presentation/home_screen.dart';
 
 /// Configuración de navegación de la app.
 ///
-/// Las pantallas reales llegan en la Fase 7; por ahora cada ruta muestra un
-/// placeholder que permite verificar la navegación. Para sustituirlas, solo se
-/// cambian los `builder` de cada `GoRoute`.
+/// La ruta de experiencia aún usa un placeholder (su pantalla llega en el
+/// siguiente bloque de la Fase 7); para sustituirlo se cambia su `builder`.
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
   routes: [
@@ -19,22 +20,14 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/departments',
       name: 'departments',
-      builder: (context, state) => const _PlaceholderScreen(
-        title: 'Departamentos',
-        actionLabel: 'Abrir La Paz',
-        destination: '/departments/la_paz',
-      ),
+      builder: (context, state) => const DepartmentsScreen(),
     ),
     GoRoute(
       path: '/departments/:deptId',
       name: 'departmentDetail',
       builder: (context, state) {
         final deptId = state.pathParameters['deptId']!;
-        return _PlaceholderScreen(
-          title: 'Departamento: $deptId',
-          actionLabel: 'Abrir una experiencia',
-          destination: '/experiences/lp_telef',
-        );
+        return DepartmentDetailScreen(departmentId: deptId);
       },
     ),
     GoRoute(
@@ -48,37 +41,19 @@ final GoRouter appRouter = GoRouter(
   ],
 );
 
-/// Pantalla temporal de la Fase 6: muestra la ruta y, si se indica, un botón
-/// para navegar a la siguiente. Se reemplaza por las pantallas reales en Fase 7.
+/// Pantalla temporal para la ruta de experiencia: su pantalla real llega en el
+/// siguiente bloque de la Fase 7.
 class _PlaceholderScreen extends StatelessWidget {
-  const _PlaceholderScreen({
-    required this.title,
-    this.actionLabel,
-    this.destination,
-  });
+  const _PlaceholderScreen({required this.title});
 
   final String title;
-  final String? actionLabel;
-  final String? destination;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(title, style: Theme.of(context).textTheme.headlineSmall),
-            if (actionLabel != null && destination != null) ...[
-              const SizedBox(height: 24),
-              FilledButton(
-                onPressed: () => context.push(destination!),
-                child: Text(actionLabel!),
-              ),
-            ],
-          ],
-        ),
+        child: Text(title, style: Theme.of(context).textTheme.headlineSmall),
       ),
     );
   }

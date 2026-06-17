@@ -118,15 +118,15 @@ de punta a punta.
 
 - [ ] **7.1** `home/presentation/home_screen.dart` — dashboard con progreso global
   y acceso a departamentos.
-- [ ] **7.2** `departments/presentation/departments_screen.dart` — grid de
+- [x] **7.2** `departments/presentation/departments_screen.dart` — grid de
   departamentos con su progreso (X/Y).
-- [ ] **7.3** `departments/presentation/department_detail_screen.dart` — lista de
+- [x] **7.3** `departments/presentation/department_detail_screen.dart` — lista de
   experiencias del departamento con estado de completado.
 - [ ] **7.4** `experience/presentation/experience_detail_screen.dart` — detalle:
   título, descripción y, si está completada, fecha + corazones + nota + galería.
 - [ ] **7.5** `experience/presentation/edit_memory_sheet.dart` — marcar completada,
   fecha, corazones (1–5), nota, agregar/quitar fotos. Guarda vía repositorio.
-- [ ] **7.6** Widgets compartidos (tarjeta de departamento, fila de experiencia,
+- [x] **7.6** Widgets compartidos (tarjeta de departamento, fila de experiencia,
   selector de corazones, galería tipo polaroid).
 
 **Verificable:** flujo completo — abrir un departamento, completar una experiencia
