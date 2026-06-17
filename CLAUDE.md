@@ -16,7 +16,7 @@ código de implementación hasta que la fase previa está aprobada. Ver `docs/`:
 
 ## Estado actual
 
-**Implementación en curso. Fases 0–6 ✅ completas. Siguiente: Fase 7 (pantallas / UI).**
+**Implementación en curso. Fases 0–7 ✅ completas. Siguiente: Fase 8 (pulido y cierre del MVP).**
 Consulta siempre los checkboxes de `docs/03-tasks.md` y la bitácora del `README.md`
 para el estado más reciente.
 

@@ -19,7 +19,7 @@ notas, fecha y una valoración en corazones.
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
 | Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
 | Tasks | ✅ Aprobado | [docs/03-tasks.md](docs/03-tasks.md) |
-| Implementación | 🟡 Fases 0–6 ✅ · Fase 7 en curso (3/4) | [docs/03-tasks.md](docs/03-tasks.md) |
+| Implementación | 🟡 Fases 0–7 ✅ · Fase 8 (pulido) siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
 
 ---
 
@@ -74,6 +74,11 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
 - **2026-06-17** — **Fase 7 (3/4)**: pantallas de departamentos (`DepartmentsScreen`
   grid con progreso X/Y y `DepartmentDetailScreen` lista de experiencias) + widgets
   `DepartmentCard` y `ExperienceRow`. Router enlaza ambas rutas reales. 43 tests en verde.
+- **2026-06-17** — **Fase 7 (4/4) completa**: `ExperienceDetailScreen` (detalle con
+  fecha, corazones, nota y galería) y `EditMemorySheet` (completar/editar: fecha,
+  corazones, nota y fotos, difiriendo la copia a disco hasta guardar). Router con sus
+  4 pantallas reales. Helper `formatMemoryDate`. **Fase 7 (pantallas) completa**.
+  48 tests en verde.
 
 ---
 

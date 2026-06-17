@@ -114,7 +114,7 @@ de punta a punta.
 
 ---
 
-## Fase 7 — Pantallas (UI)
+## Fase 7 — Pantallas (UI) ✅
 
 - [ ] **7.1** `home/presentation/home_screen.dart` — dashboard con progreso global
   y acceso a departamentos.
@@ -122,9 +122,9 @@ de punta a punta.
   departamentos con su progreso (X/Y).
 - [x] **7.3** `departments/presentation/department_detail_screen.dart` — lista de
   experiencias del departamento con estado de completado.
-- [ ] **7.4** `experience/presentation/experience_detail_screen.dart` — detalle:
+- [x] **7.4** `experience/presentation/experience_detail_screen.dart` — detalle:
   título, descripción y, si está completada, fecha + corazones + nota + galería.
-- [ ] **7.5** `experience/presentation/edit_memory_sheet.dart` — marcar completada,
+- [x] **7.5** `experience/presentation/edit_memory_sheet.dart` — marcar completada,
   fecha, corazones (1–5), nota, agregar/quitar fotos. Guarda vía repositorio.
 - [x] **7.6** Widgets compartidos (tarjeta de departamento, fila de experiencia,
   selector de corazones, galería tipo polaroid).
