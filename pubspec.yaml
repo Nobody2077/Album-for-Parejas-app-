@@ -1,5 +1,5 @@
 name: album_app
-description: "A new Flutter project."
+description: "Our Journey — álbum de relación offline-first para parejas en Bolivia."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -56,6 +56,32 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   hive_ce_generator: ^1.11.1
   build_runner: ^2.15.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.6
+
+# Íconos de la app ("Our Journey"). Regenerar los PNG fuente con
+# `py tool/generate_icon.py` y luego correr `dart run flutter_launcher_icons`.
+flutter_launcher_icons:
+  image_path: "assets/icon/app_icon.png"
+  android: "ic_launcher"
+  adaptive_icon_background: "#FAF4EC"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    background_color: "#FAF4EC"
+    theme_color: "#BC6B4C"
+
+# Splash de arranque ("Our Journey"): corazón centrado sobre fondo crema.
+# Regenerar con `dart run flutter_native_splash:create`.
+flutter_native_splash:
+  color: "#FAF4EC"
+  image: "assets/icon/app_icon_foreground.png"
+  android_12:
+    color: "#FAF4EC"
+    image: "assets/icon/app_icon_foreground.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

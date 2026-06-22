@@ -145,7 +145,11 @@ con foto/nota/fecha/corazones, y ver reflejado el progreso en Home.
   al quitar una foto en la hoja de edición.
 - [x] **8.3** Formateo de fechas con `intl` (es_BO). `formatMemoryDate` usa
   `DateFormat("d 'de' MMMM 'de' y", 'es')` con init perezosa de los símbolos.
-- [ ] **8.4** Íconos/splash de la app y nombre "Our Journey".
+- [x] **8.4** Íconos/splash de la app y nombre "Our Journey". Ícono generado por
+  `tool/generate_icon.py` (corazón terracota + camino punteado dorado, paleta del
+  tema); `flutter_launcher_icons` (Android adaptive + iOS + web) y
+  `flutter_native_splash` (fondo crema + corazón). Nombre "Our Journey" en
+  AndroidManifest, Info.plist (display name) y web (manifest + index).
 - [ ] **8.5** Revisión final de UI contra la dirección visual del Design.
 - [ ] **8.6** Pruebas en Android e iOS.
 
