@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../app/theme/app_colors.dart';
 import '../../core/services/image_picker_service.dart';
 import '../../core/services/image_storage_service.dart';
+import '../../shared/dialogs/confirm_dialog.dart';
 import '../../shared/format/memory_date.dart';
 import '../../shared/widgets/heart_rating.dart';
 import '../../shared/widgets/polaroid_photo.dart';
@@ -54,10 +55,14 @@ class _EditMemorySheetState extends ConsumerState<EditMemorySheet> {
   final List<_PhotoDraft> _photos = [];
   bool _saving = false;
 
+  /// `true` si ya existe un recuerdo completado (estamos editando, no creando).
+  bool _isEditing = false;
+
   @override
   void initState() {
     super.initState();
     final existing = ref.read(progressProvider(widget.experienceId));
+    _isEditing = existing?.completed ?? false;
     _noteController = TextEditingController(text: existing?.note ?? '');
     _date = existing?.completedDate ?? DateTime.now();
     _rating = existing?.rating ?? 0;
@@ -166,6 +171,39 @@ class _EditMemorySheetState extends ConsumerState<EditMemorySheet> {
     if (mounted) Navigator.pop(context);
   }
 
+  /// Quita una foto de la tira, confirmando primero para evitar toques
+  /// accidentales en la "X".
+  Future<void> _removePhoto(int index) async {
+    final confirmed = await confirmDestructive(
+      context,
+      title: 'Quitar foto',
+      message: '¿Quitar esta foto del recuerdo?',
+      confirmLabel: 'Quitar',
+    );
+    if (confirmed) setState(() => _photos.removeAt(index));
+  }
+
+  /// Borra por completo el recuerdo (registro + fotos en disco), con
+  /// confirmación previa.
+  Future<void> _deleteMemory() async {
+    final confirmed = await confirmDestructive(
+      context,
+      title: 'Borrar recuerdo',
+      message:
+          '¿Seguro que quieren borrar este recuerdo? Se eliminarán también sus fotos. Esta acción no se puede deshacer.',
+    );
+    if (!confirmed) return;
+
+    setState(() => _saving = true);
+    final storage = ref.read(imageStorageServiceProvider);
+    await storage.deleteExperiencePhotos(widget.experienceId);
+    await ref.read(progressControllerProvider.notifier).delete(
+          widget.experienceId,
+        );
+
+    if (mounted) Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -240,7 +278,7 @@ class _EditMemorySheetState extends ConsumerState<EditMemorySheet> {
               storage: storage,
               experienceId: widget.experienceId,
               onAdd: _showAddPhotoMenu,
-              onRemove: (index) => setState(() => _photos.removeAt(index)),
+              onRemove: _removePhoto,
             ),
             const SizedBox(height: 32),
 
@@ -257,6 +295,17 @@ class _EditMemorySheetState extends ConsumerState<EditMemorySheet> {
                     )
                   : const Text('Guardar recuerdo'),
             ),
+            if (_isEditing) ...[
+              const SizedBox(height: 8),
+              TextButton.icon(
+                onPressed: _saving ? null : _deleteMemory,
+                icon: const Icon(Icons.delete_outline, size: 18),
+                label: const Text('Borrar recuerdo'),
+                style: TextButton.styleFrom(
+                  foregroundColor: AppColors.terracotta,
+                ),
+              ),
+            ],
           ],
         ),
       ),

@@ -33,6 +33,14 @@ class _FakePicker extends ImagePickerService {
   Future<String?> pickFromCamera() async => path;
 }
 
+/// Storage cuyo borrado no toca disco: el I/O real (`dir.exists`/`delete`) no
+/// se drena bajo el `FakeAsync` de `testWidgets` y colgaría `pumpAndSettle`.
+class _NoIoStorage extends ImageStorageService {
+  _NoIoStorage(super.baseDir);
+  @override
+  Future<void> deleteExperiencePhotos(String experienceId) async {}
+}
+
 void main() {
   const testCatalog = Catalog(
     departments: [Department(id: 'la_paz', name: 'La Paz')],
@@ -66,6 +74,7 @@ void main() {
   Widget buildApp({
     List<ExperienceProgress> progress = const [],
     String? pickerPath,
+    bool noIoStorage = false,
   }) {
     return ProviderScope(
       overrides: [
@@ -74,6 +83,8 @@ void main() {
             .overrideWithValue(InMemoryProgressRepository(progress)),
         appDocsDirProvider.overrideWithValue(tempDir),
         imagePickerServiceProvider.overrideWithValue(_FakePicker(pickerPath)),
+        if (noIoStorage)
+          imageStorageServiceProvider.overrideWithValue(_NoIoStorage(tempDir)),
       ],
       child: MaterialApp(
         theme: AppTheme.light,
@@ -140,6 +151,39 @@ void main() {
     expect(find.text('Recuerdo completado'), findsOneWidget);
     expect(find.byIcon(Icons.favorite), findsNWidgets(4));
     expect(find.text('Qué linda tarde'), findsOneWidget);
+  });
+
+  testWidgets('borrar recuerdo: pide confirmación y elimina el progreso',
+      (tester) async {
+    _useTallSurface(tester);
+    await tester.pumpWidget(buildApp(noIoStorage: true, progress: [
+      ExperienceProgress.create(
+        experienceId: 'lp_telef',
+        completed: true,
+        completedDate: DateTime(2026, 2, 14),
+        rating: 5,
+        note: 'Inolvidable',
+      ),
+    ]));
+    await tester.pump();
+
+    // Abre la hoja de edición (botón "Editar recuerdo").
+    await tester.tap(find.text('Editar recuerdo'));
+    await tester.pumpAndSettle();
+
+    // Pulsa "Borrar recuerdo" → aparece el diálogo de confirmación.
+    await tester.tap(find.text('Borrar recuerdo'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('¿Seguro que quieren borrar'), findsOneWidget);
+
+    // Confirma con el botón "Borrar" del diálogo.
+    await tester.tap(find.widgetWithText(FilledButton, 'Borrar'));
+    await tester.pumpAndSettle();
+
+    // De vuelta en el detalle, el recuerdo ya no existe: vuelve la invitación.
+    expect(find.text('Recuerdo completado'), findsNothing);
+    expect(find.textContaining('Aún no han vivido'), findsOneWidget);
+    expect(find.text('Completar'), findsOneWidget);
   });
 
   testWidgets('elegir una foto la agrega a la hoja como polaroid',

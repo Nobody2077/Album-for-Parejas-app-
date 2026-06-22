@@ -24,6 +24,8 @@ class DepartmentDetailScreen extends ConsumerWidget {
       appBar: AppBar(title: Text(department?.name ?? 'Departamento')),
       body: catalog == null
           ? const Center(child: CircularProgressIndicator())
+          : experiences.isEmpty
+          ? const _NoExperiences()
           : ListView(
               padding: const EdgeInsets.fromLTRB(20, 12, 20, 32),
               children: [
@@ -64,6 +66,35 @@ class DepartmentDetailScreen extends ConsumerWidget {
                 ],
               ],
             ),
+    );
+  }
+}
+
+/// Estado vacío: el departamento aún no tiene experiencias en el catálogo.
+class _NoExperiences extends StatelessWidget {
+  const _NoExperiences();
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.explore_off_outlined, color: AppColors.inkSoft),
+            const SizedBox(height: 12),
+            Text(
+              'Aún no hay experiencias para este departamento.',
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium
+                  ?.copyWith(color: AppColors.inkSoft),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

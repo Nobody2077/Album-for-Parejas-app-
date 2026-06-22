@@ -19,7 +19,7 @@ notas, fecha y una valoración en corazones.
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
 | Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
 | Tasks | ✅ Aprobado | [docs/03-tasks.md](docs/03-tasks.md) |
-| Implementación | 🟡 Fases 0–7 ✅ · Fase 8 (pulido) siguiente | [docs/03-tasks.md](docs/03-tasks.md) |
+| Implementación | 🟡 Fases 0–7 ✅ · Fase 8 (pulido) en curso (8.1–8.3 ✅) | [docs/03-tasks.md](docs/03-tasks.md) |
 
 ---
 
@@ -79,6 +79,11 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
   corazones, nota y fotos, difiriendo la copia a disco hasta guardar). Router con sus
   4 pantallas reales. Helper `formatMemoryDate`. **Fase 7 (pantallas) completa**.
   48 tests en verde.
+- **2026-06-22** — **Fase 8 (8.1–8.3)**: pulido — estados vacíos/carga en todas las
+  pantallas (incl. departamento sin experiencias); confirmaciones al borrar
+  (diálogo `confirmDestructive`, "Borrar recuerdo" y quitar foto); fechas con `intl`
+  (`DateFormat` es). 49 tests en verde. Pendiente: 8.4 (íconos/splash), 8.5 (revisión
+  visual) y 8.6 (pruebas en dispositivo).
 
 ---
 

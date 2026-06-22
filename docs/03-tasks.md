@@ -116,7 +116,7 @@ de punta a punta.
 
 ## Fase 7 — Pantallas (UI) ✅
 
-- [ ] **7.1** `home/presentation/home_screen.dart` — dashboard con progreso global
+- [x] **7.1** `home/presentation/home_screen.dart` — dashboard con progreso global
   y acceso a departamentos.
 - [x] **7.2** `departments/presentation/departments_screen.dart` — grid de
   departamentos con su progreso (X/Y).
@@ -136,9 +136,15 @@ con foto/nota/fecha/corazones, y ver reflejado el progreso en Home.
 
 ## Fase 8 — Pulido y cierre del MVP
 
-- [ ] **8.1** Estados vacíos y de carga (catálogo cargando, sin recuerdos aún).
-- [ ] **8.2** Confirmaciones al borrar (recuerdo / foto).
-- [ ] **8.3** Formateo de fechas con `intl` (es_BO).
+- [x] **8.1** Estados vacíos y de carga (catálogo cargando, sin recuerdos aún).
+  Home (loading/error/sin recuerdos), Departamentos (loading/error), Detalle de
+  experiencia (loading/no encontrada/no completada) y Detalle de departamento
+  (loading + sin experiencias).
+- [x] **8.2** Confirmaciones al borrar (recuerdo / foto). Diálogo reutilizable
+  `confirmDestructive`; "Borrar recuerdo" (borra registro + fotos) y confirmación
+  al quitar una foto en la hoja de edición.
+- [x] **8.3** Formateo de fechas con `intl` (es_BO). `formatMemoryDate` usa
+  `DateFormat("d 'de' MMMM 'de' y", 'es')` con init perezosa de los símbolos.
 - [ ] **8.4** Íconos/splash de la app y nombre "Our Journey".
 - [ ] **8.5** Revisión final de UI contra la dirección visual del Design.
 - [ ] **8.6** Pruebas en Android e iOS.
