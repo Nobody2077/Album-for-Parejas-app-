@@ -82,7 +82,7 @@ class _HomeBody extends ConsumerWidget {
           ),
         ),
         const SizedBox(height: 32),
-        _ExploreCard(onTap: () => context.go('/departments')),
+        _ExploreCard(onTap: () => context.push('/departments')),
         const SizedBox(height: 32),
         Text('Últimos recuerdos', style: theme.textTheme.titleLarge),
         const SizedBox(height: 12),

@@ -89,6 +89,10 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
   (adaptive), iOS y web vía `flutter_launcher_icons`; splash de arranque con
   `flutter_native_splash` (fondo crema + corazón); nombre **"Our Journey"** en las tres
   plataformas. Pendiente: 8.5 (revisión visual) y 8.6 (pruebas en dispositivo).
+- **2026-06-22** — **Fase 8 (8.5, en curso)**: arreglo de navegación — la Home abría
+  Departamentos con `context.go` (reemplaza el stack), dejando esa pantalla sin flecha
+  de "atrás". Cambiado a `context.push` para que el flujo Home → Departamentos →
+  Detalle → Experiencia quede apilado y cada pantalla tenga su botón de regreso.
 
 ---
 
