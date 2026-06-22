@@ -93,6 +93,11 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
   Departamentos con `context.go` (reemplaza el stack), dejando esa pantalla sin flecha
   de "atrás". Cambiado a `context.push` para que el flujo Home → Departamentos →
   Detalle → Experiencia quede apilado y cada pantalla tenga su botón de regreso.
+- **2026-06-22** — **Fase 8 (8.5, en curso)**: rediseño del menú de departamentos.
+  Ilustraciones planas propias por departamento (`tool/generate_department_art.py`,
+  paleta del tema) en lugar de emojis; `DepartmentCard` con ilustración + barra +
+  "X / Y" + porcentaje; completados con borde dorado e insignia; orden inteligente
+  (en progreso primero, completados al final). 49 tests en verde.
 
 ---
 

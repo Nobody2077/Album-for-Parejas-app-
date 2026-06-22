@@ -97,6 +97,9 @@ flutter:
   # Curated catalog (departments + experiences), read-only at runtime.
   assets:
     - assets/catalog/
+    # Ilustraciones planas por departamento (assets/departments/{id}.png),
+    # generadas por tool/generate_department_art.py.
+    - assets/departments/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
