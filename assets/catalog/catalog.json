@@ -315,5 +315,231 @@
       "description": "El tesoro amazónico que da vida a Pando.",
       "category": "cultura"
     }
+  ],
+  "moments": [
+    {
+      "id": "m_primera_cita",
+      "title": "Primera cita",
+      "category": "Primeras veces",
+      "description": "El día que todo empezó. ¿Dónde fue, cómo se sintieron?",
+      "icon": "favorite"
+    },
+    {
+      "id": "m_primer_beso",
+      "title": "Primer beso",
+      "category": "Primeras veces",
+      "description": "Ese primer beso que no se olvida.",
+      "icon": "favorite"
+    },
+    {
+      "id": "m_primer_te_amo",
+      "title": "Primer “te amo”",
+      "category": "Primeras veces",
+      "description": "La primera vez que se lo dijeron de verdad.",
+      "icon": "favorite"
+    },
+    {
+      "id": "m_hacerse_novios",
+      "title": "Hacerse novios",
+      "category": "Primeras veces",
+      "description": "El día que decidieron ser pareja oficial.",
+      "icon": "favorite"
+    },
+    {
+      "id": "m_primera_salida",
+      "title": "Primera salida juntos",
+      "category": "Primeras veces",
+      "description": "La primera vez que salieron a pasear juntos.",
+      "icon": "place"
+    },
+    {
+      "id": "m_primer_cine",
+      "title": "Primera película juntos",
+      "category": "Primeras veces",
+      "description": "La primera peli que vieron juntos. ¿Cuál fue?",
+      "icon": "movie"
+    },
+    {
+      "id": "m_primera_comida",
+      "title": "Primera vez cocinando juntos",
+      "category": "Primeras veces",
+      "description": "Manos a la masa por primera vez.",
+      "icon": "restaurant"
+    },
+    {
+      "id": "m_primera_foto",
+      "title": "Primera foto juntos",
+      "category": "Primeras veces",
+      "description": "La primera foto de los dos.",
+      "icon": "photo_camera"
+    },
+    {
+      "id": "m_primera_pelea",
+      "title": "Primera pelea (y reconciliación)",
+      "category": "Primeras veces",
+      "description": "La primera tormenta… y cómo la superaron.",
+      "icon": "healing"
+    },
+    {
+      "id": "m_conocer_familia",
+      "title": "Conocer a su familia",
+      "category": "Primeras veces",
+      "description": "La primera vez que conocieron a la familia del otro.",
+      "icon": "groups"
+    },
+    {
+      "id": "m_conocer_amigos",
+      "title": "Conocer a sus amigos",
+      "category": "Primeras veces",
+      "description": "Presentarse con el grupo de amigos.",
+      "icon": "groups"
+    },
+    {
+      "id": "m_primer_regalo",
+      "title": "Primer regalo",
+      "category": "Primeras veces",
+      "description": "El primer detalle que se dieron.",
+      "icon": "card_giftcard"
+    },
+    {
+      "id": "m_primer_concierto",
+      "title": "Primer concierto o evento",
+      "category": "Primeras veces",
+      "description": "La primera vez que vivieron un show juntos.",
+      "icon": "music_note"
+    },
+    {
+      "id": "m_cumple_el",
+      "title": "Cumpleaños de él",
+      "category": "Celebraciones",
+      "description": "Celebrar su cumpleaños juntos.",
+      "icon": "cake"
+    },
+    {
+      "id": "m_cumple_ella",
+      "title": "Cumpleaños de ella",
+      "category": "Celebraciones",
+      "description": "Celebrar su cumpleaños juntos.",
+      "icon": "cake"
+    },
+    {
+      "id": "m_un_mes",
+      "title": "Primer mes juntos",
+      "category": "Celebraciones",
+      "description": "Un mes de relación. ¡El primero de muchos!",
+      "icon": "celebration"
+    },
+    {
+      "id": "m_seis_meses",
+      "title": "Seis meses juntos",
+      "category": "Celebraciones",
+      "description": "Medio año de historia compartida.",
+      "icon": "celebration"
+    },
+    {
+      "id": "m_primer_aniversario",
+      "title": "Primer aniversario",
+      "category": "Celebraciones",
+      "description": "Un año juntos. Celebren a lo grande.",
+      "icon": "celebration"
+    },
+    {
+      "id": "m_san_valentin",
+      "title": "Primer San Valentín",
+      "category": "Celebraciones",
+      "description": "El primer día de los enamorados como pareja.",
+      "icon": "favorite"
+    },
+    {
+      "id": "m_navidad",
+      "title": "Primera Navidad juntos",
+      "category": "Celebraciones",
+      "description": "Su primera Navidad como pareja.",
+      "icon": "ac_unit"
+    },
+    {
+      "id": "m_anio_nuevo",
+      "title": "Primer Año Nuevo juntos",
+      "category": "Celebraciones",
+      "description": "Recibir el año tomados de la mano.",
+      "icon": "celebration"
+    },
+    {
+      "id": "m_primer_viaje",
+      "title": "Primer viaje juntos",
+      "category": "Aventuras y viajes",
+      "description": "La primera escapada de los dos.",
+      "icon": "luggage"
+    },
+    {
+      "id": "m_primer_acampamento",
+      "title": "Primer acampamento",
+      "category": "Aventuras y viajes",
+      "description": "Una noche bajo las estrellas.",
+      "icon": "cabin"
+    },
+    {
+      "id": "m_escapada_finde",
+      "title": "Primera escapada de fin de semana",
+      "category": "Aventuras y viajes",
+      "description": "Dos días solo para ustedes.",
+      "icon": "luggage"
+    },
+    {
+      "id": "m_primer_trekking",
+      "title": "Primera ruta o trekking",
+      "category": "Aventuras y viajes",
+      "description": "Una caminata juntos por la naturaleza.",
+      "icon": "hiking"
+    },
+    {
+      "id": "m_road_trip",
+      "title": "Primer road trip",
+      "category": "Aventuras y viajes",
+      "description": "Carretera, música y los dos.",
+      "icon": "directions_car"
+    },
+    {
+      "id": "m_primera_playa",
+      "title": "Primera vez en la playa o el agua",
+      "category": "Aventuras y viajes",
+      "description": "Sol, agua y buena compañía.",
+      "icon": "beach_access"
+    },
+    {
+      "id": "m_primer_vuelo",
+      "title": "Primer vuelo juntos",
+      "category": "Aventuras y viajes",
+      "description": "La primera vez que volaron juntos.",
+      "icon": "flight"
+    },
+    {
+      "id": "m_mudarse_juntos",
+      "title": "Mudarse juntos",
+      "category": "Hitos de la relación",
+      "description": "Compartir un mismo techo por primera vez.",
+      "icon": "home"
+    },
+    {
+      "id": "m_mascota",
+      "title": "Adoptar una mascota",
+      "category": "Hitos de la relación",
+      "description": "Sumar un integrante peludo a la familia.",
+      "icon": "pets"
+    },
+    {
+      "id": "m_meta_comun",
+      "title": "Primer proyecto o meta en común",
+      "category": "Hitos de la relación",
+      "description": "Un ahorro, un plan, un sueño compartido.",
+      "icon": "flag"
+    },
+    {
+      "id": "m_ciudad_del_otro",
+      "title": "Conocer la ciudad del otro",
+      "category": "Hitos de la relación",
+      "description": "Visitar el lugar de origen de tu pareja.",
+      "icon": "map"
+    }
   ]
 }

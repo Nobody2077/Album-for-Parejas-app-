@@ -19,7 +19,7 @@ notas, fecha y una valoración en corazones.
 | Requirements (lite) | ✅ Listo | [docs/01-decisions.md](docs/01-decisions.md) |
 | Design | ✅ Aprobado | [docs/02-design.md](docs/02-design.md) |
 | Tasks | ✅ Aprobado | [docs/03-tasks.md](docs/03-tasks.md) |
-| Implementación | 🟡 Fases 0–7 ✅ · Fase 8 (pulido) en curso (8.1–8.4 ✅) | [docs/03-tasks.md](docs/03-tasks.md) |
+| Implementación | 🟡 Fases 0–7 ✅ · Fase 8 (pulido) en curso · Fase 9 (momentos) ✅ | [docs/03-tasks.md](docs/03-tasks.md) |
 
 ---
 
@@ -98,6 +98,13 @@ fotos, notas, fecha y corazones → ver el progreso. Todo **100% offline**.
   paleta del tema) en lugar de emojis; `DepartmentCard` con ilustración + barra +
   "X / Y" + porcentaje; completados con borde dorado e insignia; orden inteligente
   (en progreso primero, completados al final). 49 tests en verde.
+- **2026-06-22** — **Fase 9 (momentos) completa**: segundo mundo de contenido —
+  "Nuestros momentos" (hitos de pareja) en timeline vertical por categoría.
+  Modelo `Moment` curado (32 momentos en `catalog.json`) + `CustomMoment` en Hive
+  (`typeId 1`) para personalizados; reutiliza el motor de recuerdos
+  (`ExperienceProgress` con ids `m_`/`mc_`). `MomentsScreen`, `MomentDetailScreen`,
+  hoja para crear personalizados y vista de recuerdo compartida (`MemoryView`).
+  Tarjeta en Home con contador propio (no entra al anillo global). 61 tests en verde.
 
 ---
 

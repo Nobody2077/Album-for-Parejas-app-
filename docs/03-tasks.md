@@ -157,6 +157,44 @@ con foto/nota/fecha/corazones, y ver reflejado el progreso en Home.
 
 ---
 
+## Fase 9 — Momentos (hitos de pareja)
+
+> Segundo mundo de contenido, paralelo a los departamentos: momentos típicos de
+> pareja (primera cita, cumpleaños, primer viaje…) que el usuario llena con
+> foto/nota/fecha/corazones. **Reutiliza el motor de recuerdos** (`ExperienceProgress`),
+> indexado por el `id` del momento con prefijo `m_`. Decisiones aprobadas:
+> curados **+ personalizados**, vista **timeline** por categoría, acceso por
+> **tarjeta aparte** en Home con contador propio (no entra al anillo global).
+
+- [x] **9.1** Modelo `Moment` (curado, inmutable: `id`, `title`, `description?`,
+  `category`, `icon?`) + lista `moments` en `catalog.json` (32 momentos curados).
+  `Catalog.moments` + `momentById` (parseo tolerante si falta la lista).
+- [x] **9.2** Modelo Hive `CustomMoment` (`@HiveType typeId: 1`: `id`, `title`,
+  `category`, `createdAt`) para personalizados; adapter (`build_runner`);
+  registrar y abrir box en `hive_init`.
+- [x] **9.3** `MomentsRepository` (+ `HiveMomentsRepository`) + providers:
+  `curatedMomentsProvider`, `customMomentsControllerProvider`, tipo unificado
+  `MomentItem`, `momentGroupsProvider` (agrupado por categoría en orden fijo) y
+  `momentsProgressProvider` (X/Y) para el contador.
+- [x] **9.4** `MomentsScreen` — timeline vertical por categoría con contador.
+- [x] **9.5** Llenar/editar el momento reutilizando `EditMemorySheet`; vista de
+  recuerdo compartida (`MemoryView`/`MemoryInvitation` extraídas del detalle de
+  experiencia) + `MomentDetailScreen` ligera.
+- [x] **9.6** "Agregar momento personalizado" (título + categoría) → persiste en
+  `MomentsRepository`; confirmación al borrar uno personalizado (en su detalle).
+- [x] **9.7** Home: segunda tarjeta "Nuestros momentos" con contador propio +
+  rutas `/moments` y `/moments/:momentId`.
+
+**Hecho:** 61 tests en verde, `flutter analyze` sin issues.
+
+**Categorías (orden):** Primeras veces · Celebraciones · Aventuras y viajes ·
+Hitos de la relación · Personalizados.
+
+**Verificable:** abrir Momentos, llenar uno con foto/nota/fecha/corazones, crear
+un momento personalizado y ver el contador propio en Home.
+
+---
+
 ## Notas de ejecución
 
 - Cada fase se commitea por separado para mantener la bitácora del README al día.

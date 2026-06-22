@@ -4,6 +4,8 @@ import '../departments/presentation/department_detail_screen.dart';
 import '../departments/presentation/departments_screen.dart';
 import '../experience/presentation/experience_detail_screen.dart';
 import '../home/presentation/home_screen.dart';
+import '../moments/presentation/moment_detail_screen.dart';
+import '../moments/presentation/moments_screen.dart';
 
 /// Configuración de navegación de la app: las 4 rutas con sus pantallas reales.
 final GoRouter appRouter = GoRouter(
@@ -33,6 +35,19 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) {
         final expId = state.pathParameters['expId']!;
         return ExperienceDetailScreen(experienceId: expId);
+      },
+    ),
+    GoRoute(
+      path: '/moments',
+      name: 'moments',
+      builder: (context, state) => const MomentsScreen(),
+    ),
+    GoRoute(
+      path: '/moments/:momentId',
+      name: 'momentDetail',
+      builder: (context, state) {
+        final momentId = state.pathParameters['momentId']!;
+        return MomentDetailScreen(momentId: momentId);
       },
     ),
   ],

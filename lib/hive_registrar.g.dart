@@ -4,15 +4,18 @@
 
 import 'package:hive_ce/hive_ce.dart';
 import 'package:album_app/experience/models/experience_progress.dart';
+import 'package:album_app/moments/models/custom_moment.dart';
 
 extension HiveRegistrar on HiveInterface {
   void registerAdapters() {
+    registerAdapter(CustomMomentAdapter());
     registerAdapter(ExperienceProgressAdapter());
   }
 }
 
 extension IsolatedHiveRegistrar on IsolatedHiveInterface {
   void registerAdapters() {
+    registerAdapter(CustomMomentAdapter());
     registerAdapter(ExperienceProgressAdapter());
   }
 }

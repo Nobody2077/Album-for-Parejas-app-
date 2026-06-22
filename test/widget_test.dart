@@ -10,11 +10,13 @@ import 'package:album_app/catalog/models/department.dart';
 import 'package:album_app/catalog/models/experience.dart';
 import 'package:album_app/experience/experience_providers.dart';
 import 'package:album_app/home/presentation/home_screen.dart';
+import 'package:album_app/moments/moments_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:go_router/go_router.dart';
 
+import 'support/in_memory_moments_repository.dart';
 import 'support/in_memory_progress_repository.dart';
 
 void main() {
@@ -45,6 +47,8 @@ void main() {
           catalogProvider.overrideWith((ref) => testCatalog),
           progressRepositoryProvider
               .overrideWithValue(InMemoryProgressRepository()),
+          momentsRepositoryProvider
+              .overrideWithValue(InMemoryMomentsRepository()),
         ],
         child: MaterialApp.router(theme: AppTheme.light, routerConfig: router),
       ),

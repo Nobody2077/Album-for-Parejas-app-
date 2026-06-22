@@ -7,6 +7,7 @@ import '../../catalog/catalog_providers.dart';
 import '../../core/services/image_storage_service.dart';
 import '../../experience/experience_providers.dart';
 import '../../experience/models/experience_progress.dart';
+import '../../moments/moments_providers.dart';
 import '../../shared/widgets/polaroid_photo.dart';
 import '../../shared/widgets/progress_ring.dart';
 
@@ -83,6 +84,8 @@ class _HomeBody extends ConsumerWidget {
         ),
         const SizedBox(height: 32),
         _ExploreCard(onTap: () => context.push('/departments')),
+        const SizedBox(height: 14),
+        _MomentsCard(onTap: () => context.push('/moments')),
         const SizedBox(height: 32),
         Text('Últimos recuerdos', style: theme.textTheme.titleLarge),
         const SizedBox(height: 12),
@@ -127,6 +130,57 @@ class _ExploreCard extends StatelessWidget {
                   ],
                 ),
               ),
+              const Icon(Icons.chevron_right, color: AppColors.inkSoft),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _MomentsCard extends ConsumerWidget {
+  const _MomentsCard({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = Theme.of(context);
+    final stats = ref.watch(momentsProgressProvider);
+
+    return Card(
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+          child: Row(
+            children: [
+              const Icon(Icons.favorite_outline, color: AppColors.dustyRose),
+              const SizedBox(width: 14),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Nuestros momentos',
+                        style: theme.textTheme.titleMedium),
+                    Text(
+                      'Primera cita, viajes, cumpleaños…',
+                      style: theme.textTheme.bodySmall
+                          ?.copyWith(color: AppColors.inkSoft),
+                    ),
+                  ],
+                ),
+              ),
+              Text(
+                '${stats.completed} / ${stats.total}',
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: AppColors.dustyRose,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(width: 6),
               const Icon(Icons.chevron_right, color: AppColors.inkSoft),
             ],
           ),
